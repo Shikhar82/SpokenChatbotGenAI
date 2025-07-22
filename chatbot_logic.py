@@ -22,6 +22,7 @@ client_bedrock = boto3.client('bedrock-runtime', region_name=AWS_REGION)
 def get_llm_model():
     return ChatBedrock(
         model_id='anthropic.claude-3-sonnet-20240229-v1:0',
+        region_name='us-east-1',  # 👈 REQUIRED!
         model_kwargs={
             "max_tokens": 300,
             "temperature": 0.1,
